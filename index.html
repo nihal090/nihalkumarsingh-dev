@@ -860,19 +860,19 @@ Python, Django, REST APIs, HTML5, CSS3, JavaScript, Bootstrap, SQLite
                     <!-- /Boxes de Acoes -->
                 </div>
                 <div class="col-lg-7 col-md-12">
-                    <form>
+                    <form action="https://formspree.io/f/xbdlnepr" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="fname" placeholder="Full Name">
+                            <input type="text" class="form-control" id="fname" name="name" placeholder="Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="umail" placeholder="Email">
+                            <input type="email" class="form-control" id="umail" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="phone" placeholder="Phone">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
-                                placeholder="Message"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="4"
+                                placeholder="Message" required></textarea>
                         </div>
                         <button type="submit" class="ms-learn-more-right"><span class="text">Submit</span></button>
                     </form>
