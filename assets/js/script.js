@@ -415,5 +415,36 @@
           clicks = 0;
       });
   };
+
+  // Form submission handling
+  $('form').on('submit', function(e) {
+      e.preventDefault(); // Prevent default form submission
+      
+      var form = $(this);
+      var formData = new FormData(this);
+      var messageDiv = $('#form-message');
+      
+      // Show loading message
+      messageDiv.show().html('<p style="color: blue;">Sending message...</p>');
+      
+      // Submit form data via fetch
+      fetch(form.attr('action'), {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              messageDiv.html('<p style="color: green;">Message sent successfully!</p>');
+              form[0].reset(); // Clear the form
+          } else {
+              messageDiv.html('<p style="color: red;">Error sending message. Please try again.</p>');
+          }
+      })
+      .catch(error => {
+          messageDiv.html('<p style="color: red;">Error sending message. Please try again.</p>');
+          console.error('Error:', error);
+      });
+  });
   
 })(jQuery);
